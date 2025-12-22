@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+
+    <meta name="viewport" content="width=device-width,
+          initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="/static/css/map.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+
+   
+
+    <div class="folium-map" id="map_4d784081fe102f0f7c1de8a806357565">
+        <!-- 現在地ボタンをHTMLで用意 -->
+        <button id="locate-btn" class="locate-button" title="現在地へ移動">📍</button>
+
+        <!-- <div id="map-level-badge" class="map-level-badge">Lv ?</div> -->
+    </div>
+
+    <script>
+        var MAP_VAR_NAME = "map_4d784081fe102f0f7c1de8a806357565";
+
+        // マップ生成（ズームコントロール無効）
+        var map_4d784081fe102f0f7c1de8a806357565 = L.map(
+            MAP_VAR_NAME,
+            {
+                center: [35.681236, 139.767125],
+                crs: L.CRS.EPSG3857,
+                zoom: 13,
+                zoomControl: false,
+                preferCanvas: false,
+            }
+        );
+
+        // OSMレイヤー
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/">OSM</a>',
+            maxZoom: 19
+        }).addTo(map_4d784081fe102f0f7c1de8a806357565);
+
+        // ズームコントロールを右上に追加
+        L.control.zoom({
+            position: "topright"
+        }).addTo(map_4d784081fe102f0f7c1de8a806357565);
+
+        // グローバル参照用
+        window.map = map_4d784081fe102f0f7c1de8a806357565;
+    </script>
+
+<!-- Toast コンテナ -->
+<div class="toast-container position-fixed top-0 end-0 p-3">
+  <div id="gameToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto" id="toast-title">通知</strong>
+      <small class="text-muted" id="toast-time">今</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body" id="toast-body">
+      
+    </div>
+  </div>
+</div>
+
+
+
+   
+
+    <script src="/static/js/geoLocation.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="/static/js/map/spawn.js"></script>
+    <script type="module" src="/static/js/map/interactions.js"></script>
+    <!-- <script type="module" src="/static/js/map/level_badge.js"></script> -->
+</body>
+</html>

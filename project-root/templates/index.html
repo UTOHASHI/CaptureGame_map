@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Map Game</title>
+
+  <!-- 元のスタイル -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+  <!-- Bootstrap（モーダル用） -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- マップ（iframe） -->
+  <iframe
+    class="map-frame"
+    src="{{ url_for('static', filename='html/map/map.html') }}"
+    allow="geolocation"
+    title="マップ"
+  ></iframe>
+
+  <!-- ハンバーガー -->
+  <button id="menu-toggle" class="hamburger" aria-label="メニュー">☰</button>
+
+  <!-- メニュー（iframe, 初期は隠す） -->
+  <aside id="menu-panel" class="menu-panel" aria-hidden="true">
+    <iframe src="{{ url_for('static', filename='html/menu/menu.html') }}" title="メニュー"></iframe>
+  </aside>
+
+  <!-- ===== 捕獲モーダル（親ページに配置） ===== -->
+  <div class="modal fade" id="captureModal" tabindex="-1" aria-labelledby="captureModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            捕獲：<span id="cap-mon-name">？？？</span>
+            <small class="text-muted ms-2">Lv.<span id="cap-mon-level">1</span></small>
+          </h5>
+          <!-- モーダル本文のどこかに -->
+<div class="text-center mb-2">
+  <img id="cap-mon-image" class="cap-mon-image" src="" alt="monster">
+</div>
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-2 small text-muted">ロープを選択してください</div>
+
+          <div class="d-grid gap-2 mb-3">
+            <button id="cap-use-basic" class="btn btn-outline-secondary" type="button">
+              普通の縄 <span class="badge bg-secondary ms-1" id="cap-stock-basic">0</span>
+            </button>
+            <button id="cap-use-silver" class="btn btn-outline-primary" type="button">
+              銀の縄 <span class="badge bg-primary ms-1" id="cap-stock-silver">0</span>
+            </button>
+            <button id="cap-use-gold" class="btn btn-outline-warning" type="button">
+              金の縄 <span class="badge bg-warning text-dark ms-1" id="cap-stock-gold">0</span>
+            </button>
+          </div>
+
+          <div id="cap-result" class="alert d-none" role="alert"></div>
+          <div class="small text-muted" id="cap-hint">縄を選ぶと捕獲結果が表示されます。</div>
+        </div>
+
+      
+      </div>
+    </div>
+  </div>
+  <!-- ===== /捕獲モーダル ===== -->
+
+  <!-- Bootstrap JS（親ページ）-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- 親ページ側：モーダル制御（map iframe からの postMessage を受ける） -->
+  <script type="module" src="{{ url_for('static', filename='js/ui/capture_modal.js') }}"></script>
+
+  <!-- 元のメニュー開閉スクリプト -->
+  <script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+
+  <div id="map-level-badge" class="map-level-badge">Lv ?</div>
+
+  <script type="module" src="/static/js/map/level_badge.js"></script>
+
+ 
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map_4d784081fe102f0f7c1de8a806357565 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* 現在地ボタン */
+.locate-button {
+  position: absolute;
+  top: 90px;        /* ズームボタンのすぐ下に配置 */
+  right: 10px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1000;   /* マップより上に表示 */
+}
+.locate-button:hover {
+  background: #f0f0f0;
+}
+
+
+/* 共通デザイン */
+.btn-open-chest {
+  display: inline-block;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 色分け */
+.chest-btn-red {
+  background-color: #d9534f; /* 赤 */
+}
+.chest-btn-blue {
+  background-color: #0275d8; /* 青 */
+}
+.chest-btn-gold {
+  background-color: #f0ad4e; /* 金っぽいオレンジ */
+}
+
+/* hover で少し濃く */
+.chest-btn-red:hover {
+  background-color: #c9302c;
+}
+.chest-btn-blue:hover {
+  background-color: #025aa5;
+}
+.chest-btn-gold:hover {
+  background-color: #ec971f;
+}
+
+
+.monster-popup { font-weight: 600; }
+.monster-level { opacity: .8; }
+
+
+

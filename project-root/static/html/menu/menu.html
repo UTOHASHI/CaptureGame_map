@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><title>メニュー</title>
+  <link rel="stylesheet" href="/static/css/menu.css">
+</head>
+<body>
+   <h2 class="inventory-title">
+  在庫 <img src="/static/data/rope/rope.png" alt="" class="inv-icon"><br>
+  <div id = "inventory-panel"></div>
+</h2>
+
+
+<!-- 捕獲状況（=図鑑）の見出し行 -->
+<div class="dex-header">
+  <h2 class="dex-title">捕獲状況</h2>
+
+  <!-- ★ フィルタ（レア度） -->
+  <label for="dex-filter" class="dex-filter-label"></label>
+  <select id="dex-filter" class="dex-filter">
+    <option value="all">全て</option>
+    <option value="common">⭐</option>
+    <option value="rare">⭐⭐</option>
+    <option value="epic">⭐⭐⭐</option>
+  </select>
+</div>
+
+<div id="dex-list" class="dex-list"></div>
+
+<script type="module" src="/static/js/menu/menu.js"></script>
+
+
+</body>
+</html>

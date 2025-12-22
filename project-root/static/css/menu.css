@@ -1,0 +1,81 @@
+.inventory-title {
+  align-items: center;
+  gap: 6px;  /* 文字とアイコンの余白 */
+}
+
+
+
+.inv-icon {
+  height: 1em;   /* 文字サイズに合わせる */
+  width: auto;   /* アスペクト比を維持 */
+  vertical-align: middle; /* 行の高さに揃える */
+}
+
+.dex-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dex-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dex-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.dex-meta { line-height: 1.2; }
+.dex-name { font-weight: 600; }
+.dex-stars { margin-left: 6px; color: #e6b800; } /* 星の色（お好みで） */
+
+.inventory-title .inv-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+/* 在庫リストの文字サイズをモンスター一覧と同じくらいにする */
+.inventory-list {
+  font-size: 1.2rem;   /* 小さめに */
+  margin: 0;
+  padding-left: 1em;   /* リストのインデント */
+}
+
+.inventory-list li {
+  margin: 2px 0;       /* 行間を詰める */
+}
+
+
+
+/* 見出しとプルダウンを横並びに */
+.dex-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 6px;
+}
+
+.dex-title {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.dex-filter-label {
+  margin-left: auto; /* 右寄せにしたいとき */
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.dex-filter {
+  font-size: 0.9rem;
+  padding: 2px 6px;
+}
+
+
+
+
+

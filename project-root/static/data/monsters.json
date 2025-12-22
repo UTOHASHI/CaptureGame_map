@@ -1,0 +1,14 @@
+[
+  {"key":"monster_1","name":"ミドリワンメ","rarity":"common","img":"/static/data/monster/monster_1.png"},
+  {"key":"monster_2","name":"サンシャイン","rarity":"common","img":"/static/data/monster/monster_2.png"},
+  {"key":"monster_3","name":"カクサボテン","rarity":"rare","img":"/static/data/monster/monster_3.png"},
+  {"key":"monster_4","name":"ピンクスネーク","rarity":"common","img":"/static/data/monster/monster_4.png"},
+  {"key":"monster_5","name":"タマゴッチ","rarity":"rare","img":"/static/data/monster/monster_5.png"},
+  {"key":"monster_6","name":"スライムゼリー","rarity":"common","img":"/static/data/monster/monster_6.png"},
+  {"key":"monster_7","name":"キューブラー","rarity":"epic","img":"/static/data/monster/monster_7.png"},
+  {"key":"monster_8","name":"シャドーミスト","rarity":"epic","img":"/static/data/monster/monster_8.png"},
+  {"key":"monster_9","name":"アカオニン","rarity":"rare","img":"/static/data/monster/monster_9.png"},
+  {"key":"monster_10","name":"アオウニン","rarity":"rare","img":"/static/data/monster/monster_10.png"},
+  {"key":"monster_11","name":"マルメ","rarity":"common","img":"/static/data/monster/monster_11.png"},
+  {"key":"monster_12","name":"ゴンザイ","rarity":"epic","img":"/static/data/monster/monster_12.png"}
+]
